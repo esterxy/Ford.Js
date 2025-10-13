@@ -1,8 +1,8 @@
 
 let carouselArr = [
-    { image: "img/imagem_1.jpg", title: "Imagem 1", url: "lancamento.html" },
-    { image: "img/imagem_2.jpg", title: "Imagem 2", url: "lancamento.html" },
-    { image: "img/imagem_3.jpg", title: "Imagem 3", url: "lancamento.html" }
+    { image: "img/imagem_1.jpg", title: "Esta é a nova Ranger Ford 2022. Verifique novidades", url: "lancamento.html" },
+    { image: "img/imagem_2.jpg", title: "Ford a nossa história", url: "lancamento.html" },
+    { image: "img/imagem_3.jpg", title: "Nova Ford Branco Sport 2022", url: "lancamento.html" }
   ];
   
   class Carousel {

@@ -68,7 +68,7 @@ table {
 
 div#compare {
     position: absolute;
-    display: none;
+    display: flex;
     width: 50vw;
     max-width: 800px;
     min-width: 400px;
@@ -82,4 +82,5 @@ div#compare {
     padding: 10px;
     -webkit-box-shadow: 1px 1px 6px 0px rgb(0 0 0 / 34%);
     box-shadow: 1px 1px 6px 0px rgb(0 0 0 / 34%);
+    justify-content: center;
 }

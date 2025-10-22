@@ -51,6 +51,12 @@ button {
    transform: scale ease-in-out(1.5);
 
 }
+button:hover {
+    background-color: #003478;
+    color: white;
+    cursor: pointer;
+    transform: scale(1.05);
+}
 
 .titulo {
     margin-left: 8px;

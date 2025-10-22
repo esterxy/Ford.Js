@@ -55,3 +55,10 @@ button {
 .titulo {
     margin-left: 8px;
 }
+
+button:hover {
+    background-color: #1351d8;
+    color: white;
+    cursor: pointer;
+    transform: scale(1.1);
+}

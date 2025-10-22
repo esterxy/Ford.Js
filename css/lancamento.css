@@ -52,6 +52,7 @@ table {
     margin-right: auto;
     margin-top: 2vh;
     margin-bottom: 10px;
+    padding: 5000px;
   }
   
   th, td {
@@ -83,4 +84,6 @@ div#compare {
     -webkit-box-shadow: 1px 1px 6px 0px rgb(0 0 0 / 34%);
     box-shadow: 1px 1px 6px 0px rgb(0 0 0 / 34%);
     justify-content: center;
+    align-items: center;
+    margin-top: -50px;
 }

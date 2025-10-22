@@ -52,17 +52,10 @@ table {
     margin-right: auto;
     margin-top: 2vh;
     margin-bottom: 10px;
-<<<<<<< HEAD
-    padding: 5000px;
-  }
-  
-  th, td {
-=======
 }
 
 th,
 td {
->>>>>>> 65cf6e3d3fd074bf9d2d5811fd37a80ea53e2701
     text-align: left;
     padding: 8px;
 }
@@ -77,7 +70,6 @@ tr:nth-child(even) {
 }
 
 div#compare {
-    /* CORREÇÃO: Adicionado 'display: none;' para esconder o modal no início */
     display: none;
     position: absolute;
     width: 50vw;
@@ -94,10 +86,4 @@ div#compare {
     -webkit-box-shadow: 1px 1px 6px 0px rgb(0 0 0 / 34%);
     box-shadow: 1px 1px 6px 0px rgb(0 0 0 / 34%);
     justify-content: center;
-<<<<<<< HEAD
-    align-items: center;
-    margin-top: -50px;
 }
-=======
-}
->>>>>>> 65cf6e3d3fd074bf9d2d5811fd37a80ea53e2701

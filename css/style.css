@@ -42,7 +42,7 @@ main {
 
 #carousel-prev,
 #carousel-next {
-    background-color: rgba(0, 52, 120, 0.7);
+    background-color: rgba(0, 0, 0, 0.7);
     color: white;
     border: none;
     font-size: 24px;

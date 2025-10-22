@@ -22,7 +22,11 @@
   </header>
 
   <main>
-    <div id="carousel"></div>
+    <div id="carousel-wrapper">
+      <button id="carousel-prev">&lt;</button>
+      <div id="carousel"></div>
+      <button id="carousel-next">&gt;</button>
+    </div>
     <div id="carousel-title"></div>
   </main>
 
@@ -37,8 +41,9 @@
     </nav>
     <div><img src="img/ford-96.png" width="70" /></div>
   </footer>
-
+  
   <script src="js/carousel.js"></script>
+  
   <script>
     document.addEventListener("DOMContentLoaded", function() {
       Carousel.Start(carouselArr);

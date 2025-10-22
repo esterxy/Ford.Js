@@ -1,9 +1,5 @@
-
-
 class Car {
-   
-
-    constructor(nome, preco, alturacacamba, alturaveiculo, alturasolo, capacidadecarga, motor, potencia, volumecacamba, roda, image){
+    constructor(nome, preco, alturacacamba, alturaveiculo, alturasolo, capacidadecarga, motor, potencia, volumecacamba, roda, image) {
         this.nome = nome;
         this.preco = preco;
         this.alturaCacamba = alturacacamba;
@@ -16,7 +12,7 @@ class Car {
         this.roda = roda;
         this.image = image;
     }
-} 
+}
 
 let carArr = [
     new Car('XL Cabine Simples 2.2 Diesel 4X4 MT 2022', 183850, 511, 1821, 232, 1234, 2.2, 160, 1420, 'Aço Estampado 16', 'img/XL Cabine.jpg'),
@@ -26,72 +22,63 @@ let carArr = [
 
 let carsToCompare = [];
 
-// search on array if exist carClass returning 1 if not return -1
 function GetCarArrPosition(arr, carClass) {
-    for(let i = 0; i < arr.length; i++){
-        if(arr[i].nome  === carClass.nome)
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i].nome === carClass.nome)
             return i;
     }
     return -1;
 }
 
-function SetCarToCompare(el, carClass) {
-    if(carClass instanceof Car) {       
-        if(el.checked) {
-            if (carsToCompare.length < 2) {
-                carsToCompare.push(carClass);
-            } else {
-                alert("Você só pode comparar 2 carros por vez!");
-                el.checked = false; 
-            }
+function SetCarToCompare(el, carName) {
+    
+    const carClass = carArr.find(c => c.nome === carName);
+    if (!carClass) {
+        console.error("Carro não encontrado no carArr:", carName);
+        return;
+    }
+
+    if (el.checked) {
+        if (carsToCompare.length < 2) {
+            carsToCompare.push(carClass);
         } else {
-            const index = GetCarArrPosition(carsToCompare, carClass);
-            if (index !== -1) {
-                carsToCompare.splice(index, 1); 
-            }
+            alert("Você só pode comparar 2 carros por vez!");
+            el.checked = false;
         }
     } else {
-        throw "You need to set a Car Class";
+        const index = GetCarArrPosition(carsToCompare, carClass);
+        if (index !== -1) {
+            carsToCompare.splice(index, 1);
+        }
     }
-  }
+}
 
-  function ShowCompare() {
-    carsToCompare = [];
-    const checkboxes = document.querySelectorAll(".checkbox:checked");
-
-    checkboxes.forEach(cb => {
-        const textModel = cb.parentElement.parentElement.querySelector(".textmodel").innerText;
-        const car = carArr.find(c => c.nome === textModel);
-        if (car) carsToCompare.push(car);
-    });
-
+function ShowCompare() {
+    
     if (carsToCompare.length < 2) {
         alert("Você precisa selecionar 2 carros para comparar!");
         return;
     }
 
     UpdateCompareTable();
-    document.getElementById("compare").style.display = "block";
+    
+    document.getElementById("compare").style.display = "flex";
 }
 
 
-function HideCompare(){
-    document.getElementById("compare").style.display = "none"; 
+function HideCompare() {
+    document.getElementById("compare").style.display = "none";
     carsToCompare = [];
     document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => checkbox.checked = false);
 }
 
 function UpdateCompareTable() {
-    if (carsToCompare.length < 2) {
-        alert("Selecione 2 carros para comparar");
-        return;
-    }
-
+    
     const car1 = carsToCompare[0];
     const car2 = carsToCompare[1];
 
-    document.getElementById("compare_image_0").innerHTML = `<img src="${car1.image}" alt="${car1.nome}">`;
-    document.getElementById("compare_image_1").innerHTML = `<img src="${car2.image}" alt="${car2.nome}">`;
+    document.getElementById("compare_image_0").innerHTML = `<img src="${car1.image}" alt="${car1.nome}" style="width:100px;">`;
+    document.getElementById("compare_image_1").innerHTML = `<img src="${car2.image}" alt="${car2.nome}" style="width:100px;">`;
 
     document.getElementById("compare_modelo_0").innerText = car1.nome;
     document.getElementById("compare_modelo_1").innerText = car2.nome;
